@@ -2,6 +2,7 @@ const doing = document.querySelector('.doing');
 const hour = document.querySelector('.hour');
 const result = document.querySelector('.main4');
 const more = document.querySelector('.main5');
+const share = document.querySelector('.share');
 
 const showBtn = document.querySelector('.main3 button');
 
@@ -15,7 +16,14 @@ function showResult(event) {
     result.firstElementChild.firstElementChild.textContent = doing.value;
     result.lastElementChild.lastElementChild.textContent = Math.floor(10000/hour.value);
     result.classList.remove("hide");
+    more.classList.remove("hide");
   }
 }
 
+function shareFacebook() {
+  var sendUrl = "https://jeong-ki.github.io/10000hoursRules/";
+  window.open("http://www.facebook.com/sharer/sharer.php?u=" + sendUrl);
+}
+
 showBtn.addEventListener("click", showResult);
+share.addEventListener("click", shareFacebook);
